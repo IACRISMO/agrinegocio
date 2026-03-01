@@ -8,6 +8,8 @@ import { PorQueElegirnosSection } from "@/components/PorQueElegirnosSection";
 import { ImagePlaceholderSection } from "@/components/ImagePlaceholderSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
+import { SociosCampoSection } from "@/components/SociosCampoSection";
+import { ComoFuncionaSection } from "@/components/ComoFuncionaSection";
 
 export default function Home() {
   return (
@@ -15,12 +17,13 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <SociosCampoSection />
+        <ComoFuncionaSection />
         <ServicesSection />
         <TecnologiaSection />
         <RevolucionDigitalSection />
         <CultivosSection />
         <PorQueElegirnosSection />
-        <ImagePlaceholderSection />
         <CTASection />
       </main>
       <Footer />

@@ -29,7 +29,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 w-full px-6 md:px-10 lg:px-14 py-16 md:py-24">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
           {/* LEFT: Texto */}
           <div className="flex-1 max-w-2xl">
             {/* Badge */}
@@ -99,15 +99,27 @@ export function HeroSection() {
           </div>
 
           {/* RIGHT: Imagen del agricultor con celular */}
-          <div className="flex-1 flex justify-center lg:justify-end max-w-md lg:max-w-lg xl:max-w-xl">
-            <div className="relative w-full aspect-square">
-              {/* Placeholder glow detrás de la imagen */}
-              <div className="absolute inset-8 rounded-full bg-agro-green-500/20 blur-3xl" aria-hidden="true" />
+          <div className="hidden lg:flex items-start justify-end flex-shrink-0" style={{ width: '60%', marginRight: '-56px', marginTop: '120px' }}>
+            <div className="relative" style={{ width: '100%', height: '950px' }}>
+              {/* Glow verde detrás del agricultor */}
+              <div className="absolute inset-0 rounded-full bg-agro-green-500/15 blur-3xl" aria-hidden="true" />
               <Image
-                src="/images/hero-farmer.png"
+                src="/images/hero-farmer-nobg.png"
                 alt="Agricultor usando la app Agronorte en su celular"
                 fill
-                className="object-contain relative z-10 drop-shadow-2xl"
+                className="object-contain object-right-top relative z-10 drop-shadow-2xl"
+                priority
+              />
+            </div>
+          </div>
+          {/* Imagen móvil (centrada, más pequeña) */}
+          <div className="flex lg:hidden justify-center w-full">
+            <div className="relative w-full max-w-sm" style={{ height: '420px' }}>
+              <Image
+                src="/images/hero-farmer-nobg.png"
+                alt="Agricultor usando la app Agronorte en su celular"
+                fill
+                className="object-contain drop-shadow-2xl"
                 priority
               />
             </div>
