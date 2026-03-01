@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --agro-green: #16a34a;
+  --agro-green-dark: #15803d;
+  --agro-yellow: #eab308;
+  --agro-yellow-light: #fef08a;
+  --bg-light: #f8faf8;
+  --text-primary: #1a2e1a;
+  --text-muted: #4a5d4a;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--bg-light);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ===== Animaciones de entrada ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out both;
+  animation-delay: 0.15s;
+}
+
+.animate-slide-up-delay {
+  animation: slideUp 0.8s ease-out both;
+  animation-delay: 0.3s;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUp 0.8s ease-out both;
+  animation-delay: 0.45s;
+}
