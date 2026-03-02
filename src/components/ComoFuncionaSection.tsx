@@ -44,7 +44,7 @@ export function ComoFuncionaSection() {
                 </div>
 
                 {/* Steps */}
-                <div className="relative flex flex-col md:flex-row items-start gap-8 md:gap-0">
+                <div className="relative flex flex-col items-center md:flex-row md:items-start gap-10 md:gap-0">
                     {/* Línea conectora (solo desktop) */}
                     <div
                         className="hidden md:block absolute top-10 left-[16.5%] right-[16.5%] h-px border-t-2 border-dashed border-agro-green-200"
@@ -69,7 +69,7 @@ export function ComoFuncionaSection() {
                             </p>
 
                             {/* Descripción */}
-                            <p className="text-sm text-gray-500 leading-relaxed max-w-[220px]">
+                            <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
                                 {step.description}
                             </p>
                         </div>
