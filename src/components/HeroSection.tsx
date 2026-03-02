@@ -3,13 +3,15 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-const PHONE_WHATSAPP = "51999999999"; // Reemplazar con número real
-
+const PHONE_WHATSAPP = "51999999999";
 const cultivos = ["Mango", "Arroz", "Maíz", "Limón"];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 md:pt-0">
+    <section
+      className="relative flex items-center overflow-hidden"
+      style={{ minHeight: '680px', height: '1000px', maxHeight: '100svh' }}
+    >
       {/* Background image */}
       <div
         className="absolute inset-0"
@@ -20,18 +22,15 @@ export function HeroSection() {
         }}
         aria-hidden="true"
       />
-
-      {/* Dark overlay for legibility */}
-      <div
-        className="absolute inset-0 bg-black/40"
-        aria-hidden="true"
-      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-6 md:px-10 lg:px-14 py-16 md:py-24">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
-          {/* LEFT: Texto */}
-          <div className="flex-1 max-w-2xl">
+      <div className="relative z-10 w-full px-6 md:px-10 lg:px-14 py-16 md:py-24 pt-28 md:pt-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0">
+
+          {/* LEFT: Texto — centrado en móvil, izquierda en desktop */}
+          <div className="flex-1 max-w-2xl flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-agro-green-500 mb-6">
               <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
@@ -62,7 +61,7 @@ export function HeroSection() {
             </p>
 
             {/* Botones CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto justify-center lg:justify-start">
               <a
                 href={`https://wa.me/${PHONE_WHATSAPP}?text=Hola,%20quisiera%20una%20prueba%20gratis.`}
                 target="_blank"
@@ -81,7 +80,7 @@ export function HeroSection() {
             </div>
 
             {/* Optimizado para */}
-            <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-4 flex-wrap justify-center lg:justify-start">
               <span className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-[0.15em]">
                 Optimizado para:
               </span>
@@ -98,10 +97,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* RIGHT: Imagen del agricultor con celular */}
-          <div className="hidden lg:flex items-start justify-end flex-shrink-0" style={{ width: '60%', marginRight: '-56px', marginTop: '120px' }}>
-            <div className="relative" style={{ width: '100%', height: '950px' }}>
-              {/* Glow verde detrás del agricultor */}
+          {/* RIGHT desktop: agricultor */}
+          <div className="hidden lg:flex items-start justify-end flex-shrink-0" style={{ width: '68%', marginRight: '-56px', marginTop: '380px' }}>
+            <div className="relative" style={{ width: '100%', height: '1100px' }}>
               <div className="absolute inset-0 rounded-full bg-agro-green-500/15 blur-3xl" aria-hidden="true" />
               <Image
                 src="/images/hero-farmer-nobg.png"
@@ -112,9 +110,10 @@ export function HeroSection() {
               />
             </div>
           </div>
-          {/* Imagen móvil (centrada, más pequeña) */}
+
+          {/* RIGHT móvil: agricultor centrado */}
           <div className="flex lg:hidden justify-center w-full">
-            <div className="relative w-full max-w-sm" style={{ height: '420px' }}>
+            <div className="relative w-full max-w-xs" style={{ height: '340px' }}>
               <Image
                 src="/images/hero-farmer-nobg.png"
                 alt="Agricultor usando la app Agronorte en su celular"
@@ -124,6 +123,7 @@ export function HeroSection() {
               />
             </div>
           </div>
+
         </div>
       </div>
     </section>

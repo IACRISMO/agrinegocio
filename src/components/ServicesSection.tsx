@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingCart, ClipboardList, Truck } from "lucide-react";
+import { ShoppingCart, ClipboardList, Truck, FlaskConical, Users, BarChart3, Sprout, Phone } from "lucide-react";
 
 const services = [
   {
@@ -21,6 +21,36 @@ const services = [
     description:
       "Entrega rápida y segura de tus pedidos directamente en la puerta de tu fundo o almacén.",
   },
+  {
+    icon: FlaskConical,
+    title: "Análisis de Suelo",
+    description:
+      "Evaluación técnica del suelo para determinar deficiencias nutricionales y diseñar planes de fertilización precisos.",
+  },
+  {
+    icon: Sprout,
+    title: "Control de Plagas",
+    description:
+      "Diagnóstico y tratamiento de plagas y enfermedades con productos certificados y aplicación técnica.",
+  },
+  {
+    icon: BarChart3,
+    title: "Gestión de Campo",
+    description:
+      "Seguimiento digital de tus cultivos, inventario, gastos y personal desde nuestra plataforma Agronorte.",
+  },
+  {
+    icon: Users,
+    title: "Capacitaciones",
+    description:
+      "Talleres y formación para agricultores y técnicos en buenas prácticas agrícolas, nutrición y manejo integrado.",
+  },
+  {
+    icon: Phone,
+    title: "Soporte 24/7",
+    description:
+      "Atención virtual permanente para consultas urgentes sobre tus cultivos. Estamos contigo en cada etapa.",
+  },
 ];
 
 export function ServicesSection() {
@@ -37,8 +67,8 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Grid de servicios */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {services.map((service) => {
             const Icon = service.icon;
             return (
@@ -46,7 +76,6 @@ export function ServicesSection() {
                 key={service.title}
                 className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md hover:border-agro-green-200 transition-all duration-300"
               >
-                {/* Icono pequeño verde claro */}
                 <div className="w-11 h-11 rounded-xl bg-agro-green-50 flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-agro-green-500" />
                 </div>

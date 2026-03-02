@@ -10,8 +10,8 @@ export function SociosCampoSection() {
         <section className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-14">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
-                    {/* LEFT: Texto */}
-                    <div className="flex-1 max-w-xl">
+                    {/* LEFT: Texto — centrado en móvil */}
+                    <div className="flex-1 w-full text-center lg:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                             Socios del Campo Piurano
                         </h2>
@@ -33,7 +33,7 @@ export function SociosCampoSection() {
                     </div>
 
                     {/* RIGHT: Estadísticas */}
-                    <div className="flex-1 grid grid-cols-2 gap-4">
+                    <div className="flex-1 w-full grid grid-cols-2 gap-4">
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
